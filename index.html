@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Anniversary ❤️</title>
+
+<style>
+body{
+background:#ffd6e7;
+font-family:sans-serif;
+text-align:center;
+padding:30px;
+color:#d63384;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:20px;
+max-width:500px;
+margin:auto;
+box-shadow:0 0 15px rgba(0,0,0,.2);
+}
+
+h1{
+font-size:35px;
+}
+
+#timer{
+font-size:25px;
+margin-top:20px;
+font-weight:bold;
+}
+
+p{
+font-size:18px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>💖 Happy Anniversary 💖</h1>
+
+<p>
+ขอบคุณที่เข้ามาเป็นความสุขของเรา<br><br>
+ขอให้เราจับมือกันแบบนี้ไปนาน ๆ ❤️
+</p>
+
+<h2>คบกันมาแล้ว</h2>
+
+<div id="timer"></div>
+
+</div>
+
+<script>
+
+const start=new Date("2025-12-17T00:00:00");
+
+function update(){
+
+const now=new Date();
+
+const diff=now-start;
+
+const days=Math.floor(diff/(1000*60*60*24));
+
+const hours=Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+
+const minutes=Math.floor((diff%(1000*60*60))/(1000*60));
+
+const seconds=Math.floor((diff%(1000*60))/1000);
+
+document.getElementById("timer").innerHTML=
+days+" วัน<br>"+hours+" ชั่วโมง "+minutes+" นาที "+seconds+" วินาที";
+
+}
+
+setInterval(update,1000);
+
+update();
+
+</script>
+
+</body>
+  </html>
